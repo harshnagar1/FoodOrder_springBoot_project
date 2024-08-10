@@ -13,6 +13,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -32,8 +33,10 @@ public class Order {
 
     private Date createdAt;
 
+    @ManyToOne               // made this at address error
     private Address deliveryAddress;
 
+    @ManyToMany // made this when oreder error occur
     private List<OrderItem> items;
 
     // private Payment payment
